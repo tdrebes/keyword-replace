@@ -1,0 +1,41 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>de.drebes-dev.keyword-replace</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>Keyword-Replacer</name>s
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="info@drebes-dev.de" url="https://www.yourcompany.com">Drebes-DEV</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    HTML and PHP Plugin to replace keywords<br>
+    <em>replaces keywords</em>
+  ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <!--        <fileType-->
+        <!--                name="HTML File"-->
+        <!--                implementationClass="com.intellij.ide.highlighter.HtmlFileType"-->
+        <!--                language="HTML"-->
+        <!--                extensions="html php"-->
+        <!--        />-->
+<!--        <lang.syntaxHighlighter-->
+<!--                language="HTML"-->
+<!--                implementationClass="de.drebesdev.keywordreplace.HTMLKeywordHighlighter"/>-->
+        <completion.contributor
+            language="any"
+            implementationClass="de.drebesdev.keywordreplace.KeywordCompletionContributor"/>
+    </extensions>
+</idea-plugin>
